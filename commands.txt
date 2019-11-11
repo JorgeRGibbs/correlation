@@ -1,0 +1,12 @@
+ set term png
+ set yzeroaxis
+ set xzeroaxis
+ set output "salida.png"
+ set boxwidth 0.01
+ set style fill solid
+# set style line 2 lc rgb "red"
+ plot "data.dat" using 1:3:xtic(2) with boxes
+ set output "x.png"
+ plot "xdata.dat" using 1:3:xtic(2) with boxes
+ set output "h.png"
+ plot "hdata.dat" using 1:3:xtic(2) with boxes
