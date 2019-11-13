@@ -19,9 +19,12 @@ int main(){
 	scanf("%d",&x);
 	printf("Size of x2:\n");
 	scanf("%d",&h);
+	x = x*2;
+	h = h*2;
 	int idx,idh;
 	int size = h+x-1;
-	int sz;
+	int sz= h+x;
+
 	if (x > h){
 		sz  = x;
 		printf("x\n");
@@ -49,8 +52,8 @@ int main(){
 	fprintf (hdata, "%d %d %d \n",0 - idh,0 - idh,0);
     fprintf (hdata, "%d %d %d \n",h-idh+1,h-idh+1,0);
 	
-	for(int i=0;i<x;i++){
-		printf("\n x[%d]",i-idx+1);
+	for(int i=x/2;i<x;i++){
+		printf("\nx[%d]",i-idx+1-x/2);
 		scanf("%d",&y);
         fprintf (xdata, "%d %d %d \n",i - idx + 1 ,i - idx + 1 , y);
 	    //fprintf (xdata, "%d %d %d \n",0 - idx,0 - idx,0);
@@ -62,7 +65,7 @@ int main(){
 	int sum; //[h+x-1];
 	
 	//if (auto_c = 0){
-		for(int i=0;i<h;i++){
+		for(int i=0;i<h/2;i++){
 			printf("\nh[%d]",i-idh+1);
 			scanf("%d",&g);
 			harray[i] = g;
@@ -92,7 +95,7 @@ int main(){
 	//printf("%d\n",&fp );
 	printf("File opened \n");
     fprintf (fp, "%d %d %d \n",0,0,0);
-	for (k = 0 ; k < sz ; k++)
+	for (k = 0 ; k < size/2+1 ; k++)
 	{	
 		int temp = harray[0];
 		a = 0;
