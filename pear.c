@@ -51,10 +51,10 @@ int main(){
 		harray[i] = 0;
 	}
 	
-    fprintf (xdata, "%d %d %d \n",0 - idx,0 - idx,0);
-    fprintf (xdata, "%d %d %d \n",x-idx+1,x-idx+1,0);
-	fprintf (hdata, "%d %d %d \n",0 - idh,0 - idh,0);
-    fprintf (hdata, "%d %d %d \n",h-idh+1,h-idh+1,0);
+    //fprintf (xdata, "%d %d %d \n",0 - idx,0 - idx,0);
+    //fprintf (xdata, "%d %d %d \n",x-idx+1,x-idx+1,0);
+	//fprintf (hdata, "%d %d %d \n",0 - idh,0 - idh,0);
+    //fprintf (hdata, "%d %d %d \n",h-idh+1,h-idh+1,0);
 	
 	i = x/2;
 	if (xinput = fopen("input-x.txt", "r")) {
@@ -66,8 +66,9 @@ int main(){
         fclose(xinput);
     }
 
-    for (int i = 0; i < sizeof(xarray)/sizeof(int); ++i)
+    for (int i = x/2; i < sizeof(xarray)/sizeof(int); ++i)
     {
+
 		fprintf (xdata, "%d %d %d \n",i - idx + 1 ,i - idx + 1 , xarray[i]);
     	/* code */
     }
@@ -85,7 +86,7 @@ int main(){
 
 
 	i = 0;
-	if (hinput = fopen("input-h.txt", "r")) {
+	if (hinput = fopen("input-x.txt", "r")) {
         while (fscanf(hinput, "%d", &harray[i]) != EOF) {
 	        if(i == h/2 -1 )
 	        	break;
@@ -95,7 +96,7 @@ int main(){
         fclose(hinput);
     }
     
-    for (int i = 0; i < sizeof(harray)/sizeof(int); ++i)
+    for (int i = 0; i < sizeof(harray)/sizeof(int)/2; ++i)
     {
 		fprintf (hdata, "%d %d %d \n",i - idx + 1 ,i - idx + 1 , harray[i]);
     	/* code */
@@ -130,7 +131,7 @@ int main(){
 	fp = fopen("data.dat","w");
 	//printf("%d\n",&fp );
 	printf("File opened \n");
-    fprintf (fp, "%d %d %d \n",0,0,0);
+    //fprintf (fp, "%d %d %d \n",0,0,0);
 	for (k = 0 ; k < size/2+1 ; k++)
 	{	
 		int temp = harray[0];
@@ -155,8 +156,8 @@ int main(){
 		harray[l] = temp; 
 
 	} 
-    fprintf (fp, "%d %d %d \n",0 - idx,0 - idx,0);
-    fprintf (fp, "%d %d %d \n",size-idx+1,size-idx+1,0);
+    //fprintf (fp, "%d %d %d \n",0 - idx,0 - idx,0);
+    //fprintf (fp, "%d %d %d \n",size-idx+1,size-idx+1,0);
  	//system("gnuplot commands.txt");
     //system("eog graph.png &> /dev/null");
    //int* freer = rarray;
